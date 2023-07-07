@@ -1,7 +1,7 @@
 import { createPinia } from 'pinia';
-import {useMenStore} from "@/store/useMenStore";
+import {useFilterStore} from "@/store/useFilterStore";
 const pinia = createPinia();
 
-pinia.use(useMenStore);
+pinia.use(useFilterStore);
 
 export default pinia;

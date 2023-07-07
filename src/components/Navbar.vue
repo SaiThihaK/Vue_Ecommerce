@@ -9,7 +9,7 @@
       </li>
     </ul>
     <div class="flex-1">
-      <h1>Shel Wel</h1>
+     <img :src=logo alt="Ecommerce_logo" width="100">
     </div>
 
     <ul class="flex gap-5">
@@ -23,25 +23,8 @@
 </template>
 
 <script setup>
-
-const navbarItem = [
-  {
-    name:"MEN",
-    path:"/men"
-  },
-  {
-    name:"WOMEN",
-    path:"/women"
-  },
-  {
-    name:"ELECTRONICS",
-    path:"/electronics"
-  },
-  {
-    name:"JEWELERY",
-    path:"/jewelery"
-  }
-]
+import logo from "../assets/ecommmerceLogo.png"
+import {navbarItem} from "@/assets/constant/navitem";
 const navbarIcon = [
   {
     icon:"fa-solid fa-magnifying-glass"

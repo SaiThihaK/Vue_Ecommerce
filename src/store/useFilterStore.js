@@ -1,0 +1,36 @@
+import { defineStore } from 'pinia'
+import {sizefilters} from "@/assets/constant/filter";
+
+export const useFilterStore = defineStore('filter', {
+    state: () => {
+        return {
+            searchQuery:[],
+            shouldPush:true,
+        }
+    },
+   getters:{
+
+   },
+    actions: {
+        addSearchQuery(index,arrayValue){
+            this.shouldPush = true;
+            this.searchQuery.map((query,queryIndex)=>{
+                if(query.value === arrayValue[index].value){
+              this.deleteFilter(queryIndex);
+              this.shouldPush = false;
+                }
+            });
+            if(this.shouldPush){
+                this.searchQuery.push({...arrayValue[index]});
+            }
+        },
+        deleteFilter(index){
+            console.log("click");
+            this.searchQuery = this.searchQuery.filter((des)=>des.value !== this.searchQuery[index].value);
+
+        },
+        clearAllQuery(){
+            this.searchQuery = [];
+        }
+    },
+})

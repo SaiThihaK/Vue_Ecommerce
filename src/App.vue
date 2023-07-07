@@ -1,8 +1,14 @@
 <template>
   <div class="container mx-auto">
     <Navbar />
-    <div class="px-2">
-      <router-view/>
+    <div class="px-2 flex gap-5">
+      <div>
+        <FilterBar />
+      </div>
+
+      <div class="flex w-full">
+        <router-view/>
+      </div>
     </div>
 
   </div>
@@ -13,4 +19,5 @@
 
 <script setup>
 import Navbar from "@/components/Navbar.vue"
+import FilterBar from "@/components/filterBar.vue";
 </script>
