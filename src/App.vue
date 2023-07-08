@@ -1,11 +1,10 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto py-5">
     <Navbar />
     <div class="px-2 flex gap-5">
       <div>
         <FilterBar />
       </div>
-
       <div class="flex w-full">
         <router-view/>
       </div>

@@ -1,15 +1,19 @@
 import { defineStore } from 'pinia'
 import {sizefilters} from "@/assets/constant/filter";
+import axios from "axios";
 
 export const useFilterStore = defineStore('filter', {
     state: () => {
         return {
             searchQuery:[],
             shouldPush:true,
+            filterProducts:[],
         }
     },
    getters:{
-
+     getFilterProducts(state){
+         return  state.filterProducts;
+     }
    },
     actions: {
         addSearchQuery(index,arrayValue){
@@ -31,6 +35,17 @@ export const useFilterStore = defineStore('filter', {
         },
         clearAllQuery(){
             this.searchQuery = [];
-        }
+        },
+         async getDataFunction(url){
+            this.filterProducts =[];
+            try{
+                const response = await axios.get(url);
+                this.filterProducts = response.data;
+            }catch (error){
+                throw  new Error(error);
+            }
+
+
+         }
     },
 })

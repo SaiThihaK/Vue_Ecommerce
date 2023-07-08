@@ -8,6 +8,8 @@
     <FilterWeather />
     <hr class="w-full my-3" />
     <FilterMaterial />
+    <hr class="w-full my-3" />
+    <FilterColor />
   </div>
 
 </template>
@@ -17,5 +19,6 @@ import FilterSize from "@/components/Filter/FilterSize.vue";
 import FilterQuery from "@/components/Filter/FilterQuery.vue";
 import FilterWeather from "@/components/Filter/FilterWeather.vue";
 import FilterMaterial from "@/components/Filter/FilterMaterial.vue";
+import FilterColor from "@/components/Filter/FilterColor.vue";
 
 </script>
