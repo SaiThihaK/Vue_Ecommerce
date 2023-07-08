@@ -1,8 +1,8 @@
 
 const domain = "https://fakestoreapi.com"
+export const allProducts = `${domain}/products`
 
 export const allMenProducts = `${domain}/products/category/men's clothing`
-
 
 export const allWomenProducts = `${domain}/products/category/women's clothing`
 
