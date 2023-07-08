@@ -2,7 +2,7 @@
 
   <div class="flex gap-5 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 px-5 gap-5 w-full">
-      <div v-for="(product,index) in data" :key=index class="grid w-[200px]">
+      <div v-for="(product,index) in data" :key=index class=" w-[300px]">
           <div class="w-full flex justify-start">
             <img :src=product.image :alt=product.title class="w-[200px] pt-2"  />
           </div>
