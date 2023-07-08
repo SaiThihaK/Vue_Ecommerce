@@ -1,5 +1,5 @@
 <template>
-  <div class="me-5 w-[400px]">
+  <div class="me-5 md:w-[400px]">
    <FilterNav />
     <FilterQuery />
    <hr class="w-full my-3" />
