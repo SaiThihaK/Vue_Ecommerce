@@ -7,7 +7,10 @@ export const useFilterStore = defineStore('filter', {
         return {
             searchQuery:[],
             shouldPush:true,
-            filterProducts:[],
+
+            filterProducts: [],
+            navToggle: true,
+
         }
     },
    getters:{
@@ -45,6 +48,11 @@ export const useFilterStore = defineStore('filter', {
                 throw  new Error(error);
             }
 
+
+
+        },
+        navToggleHandler() {
+                 this.navToggle = !this.navToggle 
 
          }
     },

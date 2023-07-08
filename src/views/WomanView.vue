@@ -1,7 +1,9 @@
 <template>
 
   <div class="flex gap-5 w-full">
-    <div class="grid grid-cols-1 md:grid-cols-2 px-5 gap-5 w-full">
+
+    <div class="grid grid-cols-2 px-5 gap-5 w-full">
+
       <GridICard :data="useStore.getFilterProducts" />
 
     </div>

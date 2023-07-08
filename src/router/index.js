@@ -22,7 +22,8 @@ const routes = [
   },
   {
     path: '/jewelery',
-    name: "electronics",
+    name: "jewelery",
+
     component:JeweleryView
   },
   {

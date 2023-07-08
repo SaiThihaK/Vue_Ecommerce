@@ -14,9 +14,8 @@
 
 </template>
 
-
-
 <script setup>
 import Navbar from "@/components/Navbar.vue"
 import FilterBar from "@/components/filterBar.vue";
+console.log(window.innerWidth)
 </script>

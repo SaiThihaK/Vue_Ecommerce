@@ -76,9 +76,6 @@ export const filterMaterial = [
        value:"Soft & Durable Trino Knit"
     },
     {
-       value:"Soft & Durable Trino Knit"
-    },
-    {
        value:"Soft & Cozy Wool"
     },
     {
@@ -144,4 +141,42 @@ export const menProduct =[
     {
         value:"Casual fit"
     }
+
+]
+
+export const womenProduct =[
+    {
+    value:"Shirt"
+    },
+    {
+        value:"Rain Coat"
+    },
+    {
+        value:"jacket"
+    },
+    {
+        value:"Casual fit"
+    }
+]
+
+export const electronicProduct =[
+    {
+    value:"hard-disk"
+    },
+    {
+        value:"SSD"
+    },
+    {
+        value:"Monitor"
+    },
+]
+
+export const jeweleryProduct =[
+    {
+    value:"key-chain"
+    },
+    {
+        value:"ring"
+    },
+
 ]
