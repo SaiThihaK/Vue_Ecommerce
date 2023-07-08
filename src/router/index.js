@@ -21,15 +21,16 @@ const routes = [
     component: WomanView
   },
   {
-    path: '/electronics',
-    name: "electronics",
-    component: ElectronicView
-  },
-  {
     path: '/jewelery',
     name: "electronics",
-    component: JeweleryView
-  }
+    component:JeweleryView
+  },
+  {
+    path: '/electronics',
+    name: "electronics",
+    component:ElectronicView
+  },
+
 ]
 
 const router = createRouter({
