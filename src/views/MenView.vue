@@ -12,16 +12,16 @@
 <script setup>
 
 
+import {allMenProducts} from "@/assets/API/products.api";
 import {ref, onMounted} from "vue";
 import {useFilterStore} from "@/store/useFilterStore";
 import GridICard from "@/components/GridICard.vue";
-import {allJeweleryProducts} from "@/assets/API/products.api";
 
 let data = ref([]);
 const useStore = useFilterStore();
 
 onMounted(()=>{
-  useStore.getDataFunction(allJeweleryProducts);
+useStore.getDataFunction(allMenProducts);
 })
 
 </script>

@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import MenVIew from "@/views/MenVIew.vue";
-
+import MenView from "@/views/MenView.vue";
+import WomanView from "@/views/WomanView.vue";
+import ElectronicView from "@/views/ElectronicView.vue";
+import JeweleryView from "@/views/JeweleryView.vue";
 const routes = [
   {
     path: '/',
@@ -10,14 +12,25 @@ const routes = [
   },
   {
     path: '/men',
-    name: "men's clothings",
-    component: MenVIew
+    name: "men",
+    component: MenView
   },
   {
     path: '/women',
-    name: "women's clothings",
-    component: MenVIew
-  }
+    name: "women",
+    component: WomanView
+  },
+  {
+    path: '/jewelery',
+    name: "jewelery",
+    component:JeweleryView
+  },
+  {
+    path: '/electronics',
+    name: "electronics",
+    component:ElectronicView
+  },
+
 ]
 
 const router = createRouter({
