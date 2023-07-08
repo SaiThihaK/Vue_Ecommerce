@@ -7,7 +7,9 @@
       <span>
       /
     </span>
+
       <button class="hover:border-b-2 border-black mx-1 capitalize">
+
       {{showRouthPath()}}
       </button>
       <span>/</span>
@@ -19,11 +21,14 @@
   </div>
 </template>
 <script setup>
+
 import {menProduct,womenProduct,jeweleryProduct,electronicProduct} from "@/assets/constant/filter";
+
 import {useRoute} from "vue-router";
 import {useFilterStore} from "@/store/useFilterStore";
 const route = useRoute();
 const useStore = useFilterStore();
+
 const productCat = () => {
   switch (route.path) {
    
@@ -33,6 +38,7 @@ const productCat = () => {
     case "/jewelery": return jeweleryProduct;
   }
   
+
 
 }
 const queryCheckClass = (nav) => {
@@ -45,8 +51,10 @@ const queryCheckClass = (nav) => {
 };
 
 const showRouthPath = ()=>{
+
   switch (route.path) {
     case "/":return "products' sale"
+
     case "/men":return "men's Sale";
     case "/women":return "women's Sale";
     case "/electronics":return "electronics's Sale";

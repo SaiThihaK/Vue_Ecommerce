@@ -141,6 +141,7 @@ export const menProduct =[
     {
         value:"Casual fit"
     }
+
 ]
 
 export const womenProduct =[
@@ -177,4 +178,5 @@ export const jeweleryProduct =[
     {
         value:"ring"
     },
+
 ]

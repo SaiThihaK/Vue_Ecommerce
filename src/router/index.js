@@ -23,6 +23,7 @@ const routes = [
   {
     path: '/jewelery',
     name: "jewelery",
+
     component:JeweleryView
   },
   {
