@@ -1,5 +1,5 @@
 <template>
-  <nav class=" py-5 px-2 w-full flex">
+  <nav class=" py-5 px-5 ms-2 w-full flex">
     <ul class="md:flex gap-5 flex-1 hidden">
       <li v-for="(nav,index) in navbarItem">
         <RouterLink  :to=nav.path :key=index class="font-[700] text-[14px] uppercase hover:border-b-2 border-black">
