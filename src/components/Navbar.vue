@@ -27,7 +27,10 @@
 
     <ul class="flex gap-5">
     <li v-for="(icon,index) in navbarIcon" :key=index>
-    <i :class=icon.icon></i>
+      <RouterLink :to="icon.path">
+      <i :class=icon.icon></i>
+      </RouterLink>
+
     </li>
     </ul>
 
@@ -37,7 +40,7 @@
 
 <script setup>
 import redlogo from "@/assets/ecommerceLogoRed.png"
-import logo from "@/assets/ecommmerceLogo.png"
+
 import { navbarItem } from "@/assets/constant/navitem";
 import { useFilterStore } from "@/store/useFilterStore";
 import {useRoute} from "vue-router";
@@ -45,11 +48,13 @@ const useStore = useFilterStore();
 const route = useRoute();
 const navbarIcon = [
   {
-    icon:"fa-solid fa-magnifying-glass"
+    icon:"fa-solid fa-magnifying-glass",
+    path:"/search"
   },
 
   { 
-    icon: "fa-solid fa-cart-shopping"
+    icon: "fa-solid fa-cart-shopping",
+    path:"/cart"
   },
 ]
 </script>

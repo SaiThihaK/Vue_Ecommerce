@@ -9,6 +9,7 @@ export const useFilterStore = defineStore('filter', {
             shouldPush:true,
             filterProducts: [],
             navToggle: false,
+            cartItem:[]
 
         }
     },
@@ -32,7 +33,7 @@ export const useFilterStore = defineStore('filter', {
             }
         },
         deleteFilter(index){
-            console.log("click");
+
             this.searchQuery = this.searchQuery.filter((des)=>des.value !== this.searchQuery[index].value);
 
         },
@@ -51,6 +52,12 @@ export const useFilterStore = defineStore('filter', {
         },
         navToggleHandler() {
                 this.navToggle = !this.navToggle;
-         }
+         },
+        addToCard(index,arrayValue){
+                this.cartItem.push({...arrayValue[index]});
+        },
+        deleteCart(index){
+            this.cartItem = this.cartItem.filter((des)=>des.title !== this.cartItem[index].title);
+        }
     },
 })
