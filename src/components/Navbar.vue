@@ -10,10 +10,8 @@
         <li v-for="(nav,index) in navbarItem" class="mb-2 md:mb-0">
           <RouterLink  :to=nav.path exact :key=index
                        class="font-[700] text-[14px] uppercase hover:md:border-b-2 border-black"
-                       :class="{'text-[#ff0300]': $route.fullPath === nav.path}"
-
           >
-            {{nav.name}}
+            <span :class="{'text-[rgb(255,3,0)]':route.path == nav.path}">{{nav.name}}</span>
           </RouterLink>
         </li>
       </ul>
@@ -38,7 +36,9 @@
 import logo from "@/assets/ecommerceLogoRed.png"
 import { navbarItem } from "@/assets/constant/navitem";
 import { useFilterStore } from "@/store/useFilterStore";
+import {useRoute} from "vue-router";
 const useStore = useFilterStore();
+const route = useRoute();
 const navbarIcon = [
   {
     icon:"fa-solid fa-magnifying-glass"
