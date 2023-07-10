@@ -18,9 +18,13 @@
     </div>
 
 
-    <RouterLink to="/" class="flex-1">
-     <img :src="$route.fullPath === '/' ? redlogo : logo" alt="Ecommerce_logo" class="md:w-[70px] w-[50px]">
-    </RouterLink>
+  <RouterLink to="/" class="flex-1">
+    <img v-if="route.path === '/'" :src="redlogo" class="md:w-[70px] w-[50px]" alt="logo">
+    <img v-else :src="logo" class="md:w-[70px] w-[50px]" alt="logo">
+</RouterLink>
+
+
+
 
     <ul class="flex gap-5">
     <li v-for="(icon,index) in navbarIcon" :key=index>
