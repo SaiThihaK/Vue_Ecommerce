@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto overflow-hidden">
+  <div class="container mx-auto">
     <Navbar />
     <div class=" flex gap-5 relative w-full">
       <div  :class="filterClass()">

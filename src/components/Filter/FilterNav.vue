@@ -9,7 +9,6 @@
     </span>
 
       <button class="hover:border-b-2 border-black mx-1 capitalize">
-
       {{showRouthPath()}}
       </button>
       <span>/</span>
@@ -31,7 +30,6 @@ const useStore = useFilterStore();
 
 const productCat = () => {
   switch (route.path) {
-   
     case "/men": return menProduct;
     case "/women": return womenProduct;
     case "/electronics": return electronicProduct;
@@ -50,11 +48,11 @@ const queryCheckClass = (nav) => {
   }
 };
 
-const showRouthPath = ()=>{
+const filterBarNav = []
 
+const showRouthPath = ()=>{
   switch (route.path) {
     case "/":return "products' sale"
-
     case "/men":return "men's Sale";
     case "/women":return "women's Sale";
     case "/electronics":return "electronics's Sale";
