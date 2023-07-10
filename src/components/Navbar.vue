@@ -9,9 +9,9 @@
     </ul>
      <div @click="useStore.navToggleHandler" class="md:hidden flex-1" v-if="!useStore.navToggle"><i  class="fa-solid fa-bars mb-5 text-[20px] y-5 px-2 mt-3" ></i></div>
      <div v-else @click="useStore.navToggleHandler"  class="md:hidden flex-1"><i  class="fa-solid fa-xmark mb-5 text-[20px] y-5 px-2 mt-3" ></i></div>
-    <div class="flex-1">
+    <RouterLink to="/" class="flex-1">
      <img :src=logo alt="Ecommerce_logo" width="100">
-    </div>
+    </RouterLink>
 
     <ul class="flex gap-5">
     <li v-for="(icon,index) in navbarIcon" :key=index>
