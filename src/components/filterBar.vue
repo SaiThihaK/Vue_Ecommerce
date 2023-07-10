@@ -1,7 +1,6 @@
 <template>
   <div 
   class="md:w-[400px]"
-  v-if="!useStore.navToggle"
   >
    <FilterNav />
     <FilterQuery />
@@ -15,6 +14,10 @@
     <FilterColor />
   </div>
 
+
+
+
+
 </template>
 <script setup>
 import FilterNav from "@/components/Filter/FilterNav.vue";
@@ -25,12 +28,7 @@ import FilterMaterial from "@/components/Filter/FilterMaterial.vue";
 import FilterColor from "@/components/Filter/FilterColor.vue";
 import { useFilterStore } from "@/store/useFilterStore";
 const useStore = useFilterStore();
-const checkFilterBar = () => {
- 
-  if (useStore.navToggle) {
-    return "bg-red";
-  } else {
-    return "bg-blue";
-  }
-};
+
+
+console.log("nav",useStore.navToggle)
 </script>

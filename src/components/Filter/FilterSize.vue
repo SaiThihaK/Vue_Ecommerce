@@ -18,7 +18,6 @@ import {sizefilters} from "@/assets/constant/filter";
 import {useFilterStore} from "@/store/useFilterStore";
 
 const useStore = useFilterStore();
-console.log(useStore.searchQuery);
 
 const queryCheckButton = (size) => {
   const found = useStore.searchQuery.find((query) => query.value === size.value);

@@ -7,16 +7,20 @@ export const useFilterStore = defineStore('filter', {
         return {
             searchQuery:[],
             shouldPush:true,
-
+            shouldToggle:true,
             filterProducts: [],
-            navToggle: true,
+            navToggle: false,
 
         }
     },
    getters:{
      getFilterProducts(state){
          return  state.filterProducts;
-     }
+     },
+       getNavToggle(state){
+         return state.navToggle;
+
+       }
    },
     actions: {
         addSearchQuery(index,arrayValue){
@@ -50,8 +54,15 @@ export const useFilterStore = defineStore('filter', {
 
         },
         navToggleHandler() {
-            this.navToggle = !this.navToggle;
-            console.log(this.navToggle);
+            this.shouldToggle = true;
+            if(window.innerWidth > 640){
+                this.navToggle = false;
+                this.shouldToggle = false;
+            }
+            if(this.shouldToggle){
+                this.navToggle = !this.navToggle;
+            }
+
 
          }
     },
