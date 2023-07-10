@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <Navbar />
-    <div class=" flex gap-5 relative">
+    <div class=" flex gap-5 relative w-full">
       <div  :class="filterClass()">
         <FilterBar />
       </div>
@@ -9,9 +9,7 @@
         <router-view/>
       </div>
     </div>
-
   </div>
-
 </template>
 
 <script setup>
