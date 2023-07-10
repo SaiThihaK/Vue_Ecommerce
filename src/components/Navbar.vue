@@ -30,17 +30,14 @@
       <RouterLink :to="icon.path">
       <i :class=icon.icon></i>
       </RouterLink>
-
     </li>
     </ul>
-
   </nav>
   
 </template>
 
 <script setup>
 import redlogo from "@/assets/ecommerceLogoRed.png"
-
 import { navbarItem } from "@/assets/constant/navitem";
 import { useFilterStore } from "@/store/useFilterStore";
 import {useRoute} from "vue-router";
