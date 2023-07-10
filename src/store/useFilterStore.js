@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import {sizefilters} from "@/assets/constant/filter";
+
 import axios from "axios";
 
 export const useFilterStore = defineStore('filter', {
@@ -48,11 +48,10 @@ export const useFilterStore = defineStore('filter', {
                 throw  new Error(error);
             }
 
-
-
         },
         navToggleHandler() {
-                 this.navToggle = !this.navToggle 
+            this.navToggle = !this.navToggle;
+            console.log(this.navToggle);
 
          }
     },

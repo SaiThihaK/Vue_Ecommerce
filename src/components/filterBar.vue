@@ -1,9 +1,8 @@
 <template>
-
-  <div v-if="!useStore.navToggle" class="me-5 md:w-[400px]"
-
+  <div 
+  class="md:w-[400px]"
+  v-if="!useStore.navToggle"
   >
-
    <FilterNav />
     <FilterQuery />
    <hr class="w-full my-3" />
@@ -24,13 +23,14 @@ import FilterQuery from "@/components/Filter/FilterQuery.vue";
 import FilterWeather from "@/components/Filter/FilterWeather.vue";
 import FilterMaterial from "@/components/Filter/FilterMaterial.vue";
 import FilterColor from "@/components/Filter/FilterColor.vue";
-
 import { useFilterStore } from "@/store/useFilterStore";
-
 const useStore = useFilterStore();
-
-
-
-
-
+const checkFilterBar = () => {
+ 
+  if (useStore.navToggle) {
+    return "bg-red";
+  } else {
+    return "bg-blue";
+  }
+};
 </script>

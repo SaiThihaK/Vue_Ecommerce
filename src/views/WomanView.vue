@@ -16,11 +16,12 @@
 
 import { allWomenProducts} from "@/assets/API/products.api";
 import {ref, onMounted} from "vue";
-import {useFilterStore} from "@/store/useFilterStore";
+
 import GridICard from "@/components/GridICard.vue";
+import { useFilterStore } from "@/store/useFilterStore";
 
 let data = ref([]);
-const useStore = useFilterStore();
+const useStore = useFilterStore
 
 onMounted(()=>{
   useStore.getDataFunction(allWomenProducts);

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto py-5">
+  <div class="container mx-auto">
     <Navbar />
     <div class="px-2 flex gap-5">
       <div>
@@ -17,5 +17,8 @@
 <script setup>
 import Navbar from "@/components/Navbar.vue"
 import FilterBar from "@/components/filterBar.vue";
-console.log(window.innerWidth)
+import { useFilterStore } from "./store/useFilterStore";
+
+const useStore = useFilterStore;
+const filterBarState = useStore.navToggle ? "hidden md:block" :"block md:block"
 </script>
