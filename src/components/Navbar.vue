@@ -19,8 +19,7 @@
 
 
   <RouterLink to="/" class="flex-1">
-    <img v-if="route.path === '/'" :src="redlogo" class="md:w-[70px] w-[50px]" alt="logo">
-    <img v-else :src="logo" class="md:w-[70px] w-[50px]" alt="logo">
+    <img  :src="redlogo" class="md:w-[70px] w-[50px]" alt="logo">
 </RouterLink>
 
 
