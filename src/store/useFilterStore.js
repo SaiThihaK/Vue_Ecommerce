@@ -58,6 +58,6 @@ export const useFilterStore = defineStore('filter', {
         },
         deleteCart(index){
             this.cartItem = this.cartItem.filter((des)=>des.title !== this.cartItem[index].title);
-        }
+        },
     },
 })
