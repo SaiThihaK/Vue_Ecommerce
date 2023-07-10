@@ -26,6 +26,7 @@ watch(
     () => route.path,
     () => {
     useStore.getDataFunction(props.url)
+      useStore.clearAllQuery();
     }
 )
 
