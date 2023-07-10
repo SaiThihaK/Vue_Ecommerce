@@ -19,7 +19,7 @@
 
 
     <RouterLink to="/" class="flex-1">
-     <img :src=logo alt="Ecommerce_logo" class="md:w-[70px] w-[50px]">
+     <img :src="$route.fullPath === '/' ? redlogo : logo" alt="Ecommerce_logo" class="md:w-[70px] w-[50px]">
     </RouterLink>
 
     <ul class="flex gap-5">
@@ -33,7 +33,8 @@
 </template>
 
 <script setup>
-import logo from "@/assets/ecommerceLogoRed.png"
+import redlogo from "@/assets/ecommerceLogoRed.png"
+import logo from "@/assets/ecommmerceLogo.png"
 import { navbarItem } from "@/assets/constant/navitem";
 import { useFilterStore } from "@/store/useFilterStore";
 import {useRoute} from "vue-router";
