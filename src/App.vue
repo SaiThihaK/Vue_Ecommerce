@@ -5,7 +5,7 @@
       <div  :class="filterClass()">
         <FilterBar />
       </div>
-      <div class="flex w-full">
+      <div class="flex w-full px-5">
         <router-view/>
       </div>
     </div>
