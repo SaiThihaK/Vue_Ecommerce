@@ -1,6 +1,6 @@
 <template>
   <div 
-  class="md:w-[400px]"
+  class="md:w-[300px] pb-5"
   >
    <FilterNav />
     <FilterQuery />
@@ -29,6 +29,4 @@ import FilterColor from "@/components/Filter/FilterColor.vue";
 import { useFilterStore } from "@/store/useFilterStore";
 const useStore = useFilterStore();
 
-
-console.log("nav",useStore.navToggle)
 </script>

@@ -1,35 +1,36 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import MenView from "@/views/MenView.vue";
-import WomanView from "@/views/WomanView.vue";
-import ElectronicView from "@/views/ElectronicView.vue";
-import JeweleryView from "@/views/JeweleryView.vue";
+import {allProducts,allWomenProducts,allElectronicsProducts,allJeweleryProducts,allMenProducts} from "@/assets/API/products.api";
+import TemplateView from "@/views/TemplateView.vue";
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component:TemplateView,
+    props:{url:allProducts}
   },
   {
     path: '/men',
     name: "men",
-    component: MenView
+    component: TemplateView,
+    props:{url:allMenProducts}
   },
   {
     path: '/women',
     name: "women",
-    component: WomanView
+    component: TemplateView,
+    props:{url:allWomenProducts}
   },
   {
     path: '/jewelery',
     name: "jewelery",
-
-    component:JeweleryView
+    component: TemplateView,
+    props:{url:allJeweleryProducts}
   },
   {
     path: '/electronics',
     name: "electronics",
-    component:ElectronicView
+    component: TemplateView,
+    props:{url:allElectronicsProducts}
   },
 
 ]
