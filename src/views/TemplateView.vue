@@ -7,10 +7,13 @@
 <script setup>
 
 
-import { onMounted} from "vue";
+import { onMounted,watch} from "vue";
 import GridICard from "@/components/GridICard.vue";
 import { useFilterStore } from "@/store/useFilterStore";
 import { defineProps } from 'vue';
+import {useRoute} from "vue-router";
+
+const route = useRoute();
 
 const props = defineProps(['url']);
 console.log(props.url);
@@ -18,5 +21,12 @@ const useStore = useFilterStore();
 onMounted(()=>{
   useStore.getDataFunction(props.url);
 })
+
+watch(
+    () => route.path,
+    () => {
+    useStore.getDataFunction(props.url)
+    }
+)
 
 </script>
