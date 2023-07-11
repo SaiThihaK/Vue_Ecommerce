@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-auto relative">
+  <div class="container mx-auto relative overflow-x-hidden">
     <Navbar />
-    <div  v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white h-screen absolute z-50 top-0 right-0 shadow-xl">
+    <div  v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white   absolute z-50 top-0 right-0 shadow-xl">
       <Cart />
     </div>
       <div class="flex w-full md:px-5 px-1 relative">
