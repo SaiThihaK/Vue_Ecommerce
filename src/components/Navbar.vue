@@ -1,5 +1,5 @@
 <template>
-  <nav class=" py-5 px-5 ms-2 w-full flex">
+  <nav class=" py-5 px-5  w-full flex mx-4">
     <div class="md:flex gap-5 flex-1 flex-col">
       <div @click="useStore.navToggleHandler" class="md:hidden flex-1" v-if="!useStore.navToggle"><i  class="fa-solid fa-bars mb-5 text-[20px] y-5 px-2 mt-3" ></i></div>
       <div v-else @click="useStore.navToggleHandler"  class="md:hidden flex-1"><i  class="fa-solid fa-xmark mb-5 text-[20px] y-5 px-2 mt-3" ></i></div>
@@ -16,21 +16,12 @@
         </li>
       </ul>
     </div>
-
-
   <RouterLink to="/" class="flex-1">
     <img  :src="redlogo" class="md:w-[70px] w-[50px]" alt="logo">
 </RouterLink>
-
-
-
-
     <ul class="flex gap-5">
-    <li v-for="(icon,index) in navbarIcon" :key=index>
-      <RouterLink :to="icon.path">
-      <i :class=icon.icon></i>
-      </RouterLink>
-    </li>
+   <li><i class="fa-solid fa-magnifying-glass"></i></li>
+      <li @click="useStore.cartToggle = true"><i class="fa-solid fa-cart-shopping"></i></li>
     </ul>
   </nav>
   
@@ -43,15 +34,5 @@ import { useFilterStore } from "@/store/useFilterStore";
 import {useRoute} from "vue-router";
 const useStore = useFilterStore();
 const route = useRoute();
-const navbarIcon = [
-  {
-    icon:"fa-solid fa-magnifying-glass",
-    path:"/search"
-  },
 
-  { 
-    icon: "fa-solid fa-cart-shopping",
-    path:"/cart"
-  },
-]
 </script>

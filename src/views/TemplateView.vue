@@ -1,5 +1,7 @@
 <template>
-  <div class="z-10">
+  <div class="md:relative"
+  :class="`${useStore.navToggle ? 'absolute z-30 w-full':'relative'}`"
+  >
     <div  :class="filterClass()">
       <FilterBar />
     </div>
@@ -18,6 +20,7 @@ import { useFilterStore } from "@/store/useFilterStore";
 import { defineProps } from 'vue';
 import {useRoute} from "vue-router";
 import FilterBar from "@/components/filterBar.vue";
+import Cart from "@/components/CartComponent/Cart.vue";
 
 const route = useRoute();
 
@@ -37,10 +40,10 @@ watch(
 )
 const filterClass = ()=>{
   if(useStore.navToggle){
-    return "block absolute md:relative zIndex-[20] bg-white top-0 left-0 w-[80%] md:w-[400px] px-5";
+    return `block  bg-white top-0 left-0 w-full  md:w-[400px] px-5 ml-3`;
   }
   else{
-    return "hidden md:relative md:block zIndex-[20] bg-white md:w-[400px] px-5";
+    return "hidden md:relative md:block  bg-white md:w-[400px] px-5";
   }
 }
 </script>

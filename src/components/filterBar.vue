@@ -1,6 +1,6 @@
 <template>
   <div 
-  class="md:w-[300px] pb-5"
+  class=" pb-5"
   >
    <FilterNav />
     <FilterQuery />

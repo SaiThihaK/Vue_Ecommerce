@@ -9,7 +9,8 @@ export const useFilterStore = defineStore('filter', {
             shouldPush:true,
             filterProducts: [],
             navToggle: false,
-            cartItem:[]
+            cartItem:[],
+            cartToggle:false,
 
         }
     },
