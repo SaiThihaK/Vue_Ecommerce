@@ -1,9 +1,6 @@
 <template>
-  <div v-for="(product,index) in props.data" :key=index class="mt-5 flex-1 relative" id="card">
-    <div class="absolute z-30 top-0 md:right-[50px] right-5">
-      <i v-if="!useStore.cartItem.find((cart) => cart.title === product.title)" class="fa-regular fa-heart" id="add" @click="useStore.addToCard(index, props.data)"></i>
-      <i v-else @click="useStore.deleteCart(index)" class="fa-solid fa-heart text-[rgb(255,3,0)]"></i>
-    </div>
+  <div v-for="(product,index) in props.data" :key=index class="mt-5 flex flex-col relative" id="card">
+
 
     <RouterLink :to="`/product/${product.id}`">
       <div class="flex justify-center md:justify-start h-[250px] md:h-[300px] relative">
@@ -14,7 +11,12 @@
         <p class="font-[700] text-[13px]  flex-wrap w-full">{{ product.title }}</p>
         <span class="text-[12px] text-gray-500">${{ product.price }}</span>
       </div>
+
     </RouterLink>
+    <div class="flex  mt-2 ps-5 md:ps-0 flex-1 items-end " >
+      <button v-if="!useStore.cartItem.find(item=>item.id === product.id)" class="w-[200px] bg-black text-white py-2 rounded-md h-[40px] block md:hidden" id="add" @click="useStore.addToCard(index,props.data)">Add to Cart</button>
+      <button v-else class="w-[200px] bg-[rgb(255,3,0)] text-white py-2 rounded-md block h-[40px] " @click="useStore.cartItem = useStore.cartItem.filter(item=>item.id !== product.id)">Remove from Cart</button>
+    </div>
 
   </div>
 </template>
@@ -33,8 +35,6 @@ const useStore = useFilterStore();
 #card:hover #add{
   display:block
 }
-#add{
-  display: none;
-}
+
 
 </style>

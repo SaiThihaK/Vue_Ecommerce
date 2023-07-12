@@ -1,9 +1,9 @@
 <template>
-<h1>
+<div class="w-full h-full">
 {{ 
 useStore.filterProducts.title    
 }}
-</h1>
+</div>
 </template>
 
 

@@ -58,7 +58,7 @@ export const useFilterStore = defineStore('filter', {
                 this.cartItem.push({...arrayValue[index]});
         },
         deleteCart(index){
-            this.cartItem = this.cartItem.filter((des)=>des.title !== this.cartItem[index].title);
+            this.cartItem = this.cartItem.filter((des)=>des.id !== this.cartItem[index].id);
         },
     },
 })
