@@ -1,7 +1,7 @@
 <template>
  <div class="w-full h-full mt-5">
    <div class="w-full flex justify-start flex-col gap-5 pe-5">
-     <img :src="companylogo" alt="company logo" class="w-[150px]"/>
+     <img :src="companylogo" alt="company logo" class="w-[100px]"/>
      <div class="flex gap-3">
        <span class="text-[14px] text-gray-400">Shipping</span>
        <span class="text-[14px] text-gray-400"> <i class="fa-solid fa-chevron-right"></i> </span>
