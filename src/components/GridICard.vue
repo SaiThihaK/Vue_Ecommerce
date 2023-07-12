@@ -14,7 +14,7 @@
 
     </RouterLink>
     <div class="flex  mt-2 ps-5 md:ps-0 flex-1 items-end " >
-      <button v-if="!useStore.cartItem.find(item=>item.id === product.id)" class="w-[200px] bg-black text-white py-2 rounded-md h-[40px] block md:hidden" id="add" @click="useStore.addToCard(index,props.data)">Add to Cart</button>
+      <button v-if="!useStore.cartItem.find(item=>item.id === product.id)" class="w-[200px] bg-black text-white py-2 rounded-md h-[40px] block"  @click="useStore.addToCard(index,props.data)">Add to Cart</button>
       <button v-else class="w-[200px] bg-[rgb(255,3,0)] text-white py-2 rounded-md block h-[40px] " @click="useStore.cartItem = useStore.cartItem.filter(item=>item.id !== product.id)">Remove from Cart</button>
     </div>
 
@@ -32,9 +32,6 @@ const useStore = useFilterStore();
 </script>
 
 <style>
-#card:hover #add{
-  display:block
-}
 
 
 </style>

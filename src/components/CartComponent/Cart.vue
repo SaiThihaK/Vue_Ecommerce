@@ -36,7 +36,9 @@
         <p class="flex-0 uppercase tracking-wider">Free</p>
       </div>
       <div class="w-full bg-black py-3 rounded-sm mt-2">
-       <button class="w-full uppercase text-white font-[600] text-[14px] tracking-wider">proceed to checkout</button>
+       <button class="w-full uppercase text-white font-[600] text-[14px] tracking-wider"
+       @click="router.push('/checkout')"
+       >proceed to checkout</button>
       </div>
     </div>
 
@@ -47,6 +49,8 @@
 <script setup>
 import {useFilterStore} from "@/store/useFilterStore";
 import CartItem from "@/components/CartComponent/CartItem.vue";
+import {useRoute} from "vue-router";
+import router from "@/router";
 
 
 const useStore = useFilterStore();

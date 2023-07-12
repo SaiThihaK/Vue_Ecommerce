@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import {allProducts,allWomenProducts,allElectronicsProducts,allJeweleryProducts,allMenProducts} from "@/assets/API/products.api";
 import TemplateView from "@/views/TemplateView.vue";
 import ProductView from "@/views/ProductView"
+import CheckoutView from "@/views/CheckoutView.vue";
 const routes = [
   {
     path: '/',
@@ -38,6 +39,11 @@ const routes = [
     path: '/product/:id',
     name: "product detail",
     component:ProductView
+  },
+  {
+    path: '/checkout',
+    name: "bill checkout",
+    component:CheckoutView
   }
 
 ]

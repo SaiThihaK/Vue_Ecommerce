@@ -1,14 +1,20 @@
 <template>
-  <div class="md:relative"
-  :class="`${useStore.navToggle ? 'absolute z-30 w-full':'relative'}`"
-  >
+  <div class="flex flex-col w-full">
+  <Navbar />
+  <div  v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white   absolute z-50 top-0 right-0 shadow-xl">
+    <Cart />
+  </div>
+  <div class="md:relative flex gap-5"  :class="`${useStore.navToggle ? 'absolute z-30 w-full':'relative'}`">
     <div  :class="filterClass()">
       <FilterBar />
     </div>
+    <div class=" w-full grid-cols-2 xl:grid-cols-4 grid ps-5  grid-flow-row">
+      <GridICard :data="useStore.getFilterProducts" />
+    </div>
   </div>
-      <div class=" w-full grid-cols-2 xl:grid-cols-4 grid  grid-flow-row">
-        <GridICard :data="useStore.getFilterProducts" />
-      </div>
+  </div>
+
+
 </template>
 
 <script setup>
@@ -21,6 +27,7 @@ import { defineProps } from 'vue';
 import {useRoute} from "vue-router";
 import FilterBar from "@/components/filterBar.vue";
 import Cart from "@/components/CartComponent/Cart.vue";
+import Navbar from "@/components/Navbar.vue";
 
 const route = useRoute();
 
