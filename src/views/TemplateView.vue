@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap flex-col w-full h-full">
+  <div class="flex flex-wrap flex-col w-full h-full pb-5">
   <Navbar />
   <div  v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white   absolute z-50 top-0 right-0 shadow-xl">
     <Cart />
@@ -11,7 +11,7 @@
       </div>
   </div>
   
-    <div class=" w-full grid-cols-2 xl:grid-cols-4 grid  grid-flow-row">
+    <div class=" w-full grid-cols-2 xl:grid-cols-4 grid   grid-flow-row">
       <GridICard :data="useStore.getFilterProducts" />
     </div>
   </div>
