@@ -1,5 +1,5 @@
 <template>
-<div class="w-[100%] p-5 mt-2 relative min-h-[97vh] flex flex-col">
+<div class="w-[100%] p-5 mt-2 relative min-h-screen flex flex-col">
   <i class="fa-solid fa-xmark absolute text-[30px] hover:rotate-90" @click="useStore.cartToggle = false"></i>
 <div class="flex flex-col w-full h-ful flex-0l">
     <i class="fa-solid fa-cart-shopping text-[25px] text-center"></i>
