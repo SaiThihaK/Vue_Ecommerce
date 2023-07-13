@@ -1,17 +1,17 @@
 <template>
-  <div class="flex flex-col w-full h-full">
+  <div class="flex flex-wrap flex-col w-full h-full">
   <Navbar />
   <div  v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white   absolute z-50 top-0 right-0 shadow-xl">
     <Cart />
   </div>
-  <div class="relative">
+  <div class="relative w-full flex flex-wrap">
     <div class="md:relative flex gap-5"  :class="`${useStore.navToggle ? 'absolute z-30 w-full' : 'relative'}`">
+        <div  :class="filterClass()">
+        <FilterBar />
+      </div>
   </div>
-
-    <div  :class="filterClass()">
-      <FilterBar />
-    </div>
-    <div class=" w-full grid-cols-2 xl:grid-cols-4 grid ps-5  grid-flow-row">
+  
+    <div class=" w-full grid-cols-2 xl:grid-cols-4 grid  grid-flow-row">
       <GridICard :data="useStore.getFilterProducts" />
     </div>
   </div>
@@ -50,10 +50,10 @@ watch(
 )
 const filterClass = ()=>{
   if(useStore.navToggle){
-    return `block  bg-white top-0 left-0 w-full   md:w-[400px] px-5 ml-3`;
+    return `block  bg-white top-0 left-0 w-full   md:w-[400px] px-5`;
   }
   else{
-    return "hidden md:relative md:block  bg-white md:w-[400px] px-5";
+    return "hidden md:relative md:block w-full  bg-white md:w-[400px] px-5";
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto relative w-full">
 
-      <div class="flex w-full md:px-5 px-1 relative ">
+      <div class="flex w-full md:px-5 px-1 relative">
         <router-view/>
       </div>
     </div>
