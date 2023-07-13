@@ -47,6 +47,7 @@ export const useFilterStore = defineStore('filter', {
                 const response = await axios.get(url);
                 this.filterProducts = response.data;
             }catch (error){
+                console.log(error.message)
                 throw  new Error(error);
             }
 

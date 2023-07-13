@@ -1,18 +1,6 @@
 <template>
   <div class="flex flex-col gap-3">
-<!--    <div class="text-[12px] font-[700] flex ">-->
-<!--      <RouterLink to="/" class="hover:border-b-2 border-black mx-1">-->
-<!--        Home-->
-<!--      </RouterLink>-->
-<!--      <span>-->
-<!--      /-->
-<!--    </span>-->
 
-<!--      <button class="hover:border-b-2 border-black mx-1 capitalize">-->
-<!--      {{showRouthPath()}}-->
-<!--      </button>-->
-<!--      <span>/</span>-->
-<!--    </div>-->
     <h3 class="capitalize text-[20px] font-[800]">Shel Wel's essential wears</h3>
     <p v-for="(nav,index) in productCat()" @click="useStore.addSearchQuery(index,productCat())" :class="queryCheckClass(nav)" :key=index>
       {{nav.value}}
