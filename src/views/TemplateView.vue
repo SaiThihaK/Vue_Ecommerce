@@ -1,10 +1,13 @@
 <template>
-  <div class="flex flex-col w-full">
+  <div class="flex flex-col w-full h-full">
   <Navbar />
   <div  v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white   absolute z-50 top-0 right-0 shadow-xl">
     <Cart />
   </div>
-  <div class="md:relative flex gap-5"  :class="`${useStore.navToggle ? 'absolute z-30 w-full':'relative'}`">
+  <div class="relative">
+    <div class="md:relative flex gap-5"  :class="`${useStore.navToggle ? 'absolute z-30 w-full' : 'relative'}`">
+  </div>
+
     <div  :class="filterClass()">
       <FilterBar />
     </div>
@@ -47,7 +50,7 @@ watch(
 )
 const filterClass = ()=>{
   if(useStore.navToggle){
-    return `block  bg-white top-0 left-0 w-full  md:w-[400px] px-5 ml-3`;
+    return `block  bg-white top-0 left-0 w-full   md:w-[400px] px-5 ml-3`;
   }
   else{
     return "hidden md:relative md:block  bg-white md:w-[400px] px-5";
