@@ -1,6 +1,6 @@
 <template>
-<div class="flex w-full gap-5 overflow-hidden">
-<div class="flex-1 bg-rgb(255,255,255) w-full pe-5">
+<div class="flex flex-col md:flex-row w-full gap-5 overflow-hidden">
+<div class="flex-1 bg-rgb(255,255,255) w-full md:pe-5 px-2">
 <BankPayment />
 </div>
   <div class="flex-1 bg-[rgb(250,250,250)] p-5 min-h-screen shadow-lg">

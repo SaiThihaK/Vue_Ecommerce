@@ -17,7 +17,7 @@
      </div>
    </div>
    <div class="mt-5 border-2 relative">
-     <p class="absolute left-[10%] font-[400] text-gray-400 -top-4 px-3 bg-white">
+     <p class="absolute left-[10%] font-[400] text-[12px] md:text-[16px] text-gray-400 -top-3 md:-top-4 px-3 bg-white">
        or continue below to pay with a credit card
      </p>
    </div>
