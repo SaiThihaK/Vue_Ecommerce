@@ -1,5 +1,6 @@
 <template>
-  <div v-for="(item,index) in useStore.cartItem" class="flex flex-col"  :key="index">
+ 
+     <div v-for="(item,index) in useStore.cartItem" class="flex flex-col"  :key="index">
     <div class="flex">
       <img :src="item.image" :alt="item.title" class="w-[100px] h-[100px]" />
       <div class="flex flex-col flex-1 ps-5">
@@ -12,6 +13,8 @@
     </div>
     <hr class="my-3 border-[1px]">
   </div>
+
+ 
 </template>
 
 <script setup>

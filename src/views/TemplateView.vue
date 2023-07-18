@@ -4,7 +4,7 @@
     <div v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white h-full overflow-hidden absolute z-50 top-0 right-0 shadow-xl">
       <Cart />
     </div>
-    <div :class="`relative w-full ${useStore.navToggle ? 'h-[70vh]':'h-[85vh]'} overflow-scroll  flex`">
+    <div :class="`relative w-full ${useStore.navToggle ? 'h-[70vh]':'md:h-[90vh] h-screen'} overflow-scroll  flex`">
       <div class="md:relative flex"
         :class="`${useStore.navToggle ? 'absolute z-30 w-full' : 'relative'}`">
         <div :class="filterClass()">
