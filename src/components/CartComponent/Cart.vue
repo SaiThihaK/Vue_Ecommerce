@@ -1,5 +1,5 @@
 <template>
-<div class="w-[100%] p-5 mt-2 relative min-h-screen flex flex-col">
+<div class="w-[100%] p-5 mt-2 relative  flex flex-col">
   <i class="fa-solid fa-xmark absolute text-[30px] hover:rotate-90" @click="useStore.cartToggle = false"></i>
 <div class="flex flex-col w-full h-ful flex-0l">
     <i class="fa-solid fa-cart-shopping text-[25px] text-center"></i>
@@ -9,7 +9,7 @@
 </div>
   <hr class="mt-1 border-[4px] border-[rgb(245,245,245]"/>
 
-  <div v-if="useStore.cartItem.length === 0" class="w-full flex-col gap-5 h-full flex-1">
+  <div v-if="useStore.cartItem.length === 0" class="w-full flex-col gap-5 h-screen ">
     <h3 class="capitalize mt-5 text-center font-[600] tracking-wide">Your cart is empty</h3>
     <div class="flex flex-col gap-5 w-full mt-5">
       <RouterLink :to="item.path" @click="useStore.cartToggle = false" v-for="(item,index) in EmptyCartNav" :key="index" class="w-full flex justify-center">
@@ -20,7 +20,7 @@
   </div>
   <div v-else class="py-3 w-full flex flex-col gap-5 h-full justify-end">
     <div class=" flex-col h-full flex flex-0">
-      <div>
+      <div class="overflow-y-scroll h-[82vh]">
         <CartItem />
       </div>
     </div>

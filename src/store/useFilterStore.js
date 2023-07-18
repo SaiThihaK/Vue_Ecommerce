@@ -54,9 +54,11 @@ export const useFilterStore = defineStore('filter', {
         },
         navToggleHandler() {
                 this.navToggle = !this.navToggle;
+                
          },
         addToCard(index,arrayValue){
                 this.cartItem.push({...arrayValue[index]});
+              
         },
         deleteCart(index){
             this.cartItem = this.cartItem.filter((des)=>des.id !== this.cartItem[index].id);

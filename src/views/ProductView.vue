@@ -1,6 +1,13 @@
 <template>
+    <div class="flex w-full flex-col overflow-hidden h-screen">
+      <div class="flex flex-wrap flex-col w-full">
+      <Navbar />
+      </div>
+      <div  v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white   absolute z-50 top-0 right-0 shadow-xl">
+        <Cart />
+      </div>
 <div class="w-full h-screen py-5">
-<div class="flex w-full h-full py-5 justify-center items-center">
+<div class="flex flex-col md:flex-row px-5 w-full h-full py-5 justify-center items-center">
 <div class=" w-[60%] flex-1">
     <img :src="useStore.filterProducts.image" :alt="useStore.filterProducts.title" class="w-[400px]" />
 </div>
@@ -18,13 +25,15 @@
     </div>
     <div>{{ useStore.filterProducts.description }}</div>
     <div class="w-full mt-5">
-            <button class="bg-black text-white p-3 rounded-sm">ADD TO CART - ${{ useStore.filterProducts.price }}</button>
+            <button v-if="!useStore.cartItem.find(item => item.id === useStore.filterProducts.id)" @click="addToCart(useStore.filterProducts)" class="bg-black text-white p-3 rounded-sm">ADD TO CART - ${{ useStore.filterProducts.price }}</button>
+              <button v-else @click="deleteCart(useStore.filterProducts)" class="bg-[#ff0300] text-white p-3 rounded-sm">REMOVE FROM CART - ${{ useStore.filterProducts.price }}</button>
+    </div>
+</div>
+</div>
+</div>
     </div>
 
 
-</div>
-</div>
-</div>
 </template>
 
 
@@ -33,20 +42,34 @@ import { singleProduct } from '@/assets/API/products.api';
 import { useFilterStore } from '@/store/useFilterStore';
 import { useRoute } from 'vue-router';
 import { onMounted,watch } from 'vue';
+import Navbar from '@/components/Navbar.vue';
+import Cart from '@/components/CartComponent/Cart.vue';
 const useStore = useFilterStore();
 const route = useRoute();
 const id = route.params.id;
 const url = singleProduct + id;
-console.log(url);
-console.log(useStore.filterProducts);
+
+
+const addToCart = (product)=>{
+useStore.cartItem.push({...product});
+    useStore.cartToggle = true;
+    find();
+   
+    console.log(find);
+};
+const deleteCart = (product)=>{
+      useStore.cartItem = useStore.cartItem.filter((des) => des.id !== product.id);
+}
 onMounted(() => {
     useStore.getDataFunction(url.toString());
+    find();
 })
 
 watch(
     () => route.path,
     () => {
         useStore.getDataFunction(url.toString());
+       
     }
 )
 

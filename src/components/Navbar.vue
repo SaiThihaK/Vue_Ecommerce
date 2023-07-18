@@ -2,7 +2,7 @@
   <nav class=" p-5   w-full flex mx-4 z-50">
     <div class="md:flex gap-5 flex-1 flex-col">
       <div @click="useStore.navToggleHandler" class="md:hidden flex-1" v-if="!useStore.navToggle"><i  class="fa-solid fa-bars mb-5 text-[20px] y-5 px-2 mt-3" ></i></div>
-      <div v-else @click="useStore.navToggleHandler"  class="md:hidden flex-1"><i  class="fa-solid fa-xmark mb-5 text-[20px] y-5 px-2 mt-3" ></i></div>
+      <div v-else @click="useStore.navToggleHandler"  class="md:hidden flex-1"><i  class="fa-solid fa-xmark mb-5 text-[20px] y-5  mt-3" ></i></div>
       <ul class="md:flex md:flex-row gap-5 flex-1 flex-col"
       :class="{'hidden':!useStore.navToggle}"
       >
