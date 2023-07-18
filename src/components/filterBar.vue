@@ -1,6 +1,6 @@
 <template>
   <div 
-  class="pb-5"
+  class="pb-5 oveflow-y-scroll"
   >
    <FilterNav />
     <FilterQuery />

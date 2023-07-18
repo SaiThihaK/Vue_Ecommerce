@@ -8,11 +8,11 @@
       </div>
 <div class="w-full h-screen py-5">
 <div class="flex flex-col md:flex-row px-5 w-full h-full py-5 justify-center items-center">
-<div class=" w-[60%] flex-1">
+<div class=" w-[60%]   md:flex-1 flex-0">
     <img :src="useStore.filterProducts.image" :alt="useStore.filterProducts.title" class="w-[400px]" />
 </div>
 <div class="flex-1">
-    <h1 class="font-[700] text-[30px]">{{ useStore.filterProducts.title }}</h1>
+    <h1 class="font-[700] text-[15px] md:text-[30px]">{{ useStore.filterProducts.title }}</h1>
     <div class="flex gap-5">
         <span>${{ useStore.filterProducts.price }}</span>
         <span class="uppercase italic bg-[#f5f5f5]">Free Shipping</span>
@@ -23,7 +23,7 @@
         </svg> 
         <p class="text-[14px]">{{ useStore.filterProducts.rating?.rate }}</p>
     </div>
-    <div>{{ useStore.filterProducts.description }}</div>
+    <div class="text-[12px] md:text-[24px]">{{ useStore.filterProducts.description }}</div>
     <div class="w-full mt-5">
             <button v-if="!useStore.cartItem.find(item => item.id === useStore.filterProducts.id)" @click="addToCart(useStore.filterProducts)" class="bg-black text-white p-3 rounded-sm">ADD TO CART - ${{ useStore.filterProducts.price }}</button>
               <button v-else @click="deleteCart(useStore.filterProducts)" class="bg-[#ff0300] text-white p-3 rounded-sm">REMOVE FROM CART - ${{ useStore.filterProducts.price }}</button>
