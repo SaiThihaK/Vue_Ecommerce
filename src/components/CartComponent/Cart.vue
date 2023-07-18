@@ -1,15 +1,16 @@
 <template>
-  <div class="w-[100%] p-5 mt-2 relative  flex flex-col">
+  <div class="w-[100%] px-5 pt-5 mt-2 relative   flex flex-col  overflow-hidden">
     <i class="fa-solid fa-xmark absolute text-[30px] hover:rotate-90" @click="useStore.cartToggle = false"></i>
-    <div class="flex flex-col w-full h-ful flex-0l">
+    <div class="flex flex-col w-full  flex-0">
       <i class="fa-solid fa-cart-shopping text-[25px] text-center"></i>
       <p class="text-center text-[12px] mt-2">
         {{ useStore.cartItem.length === 0 ? "You're $75 away from free shipping" : "Congrats! You get free standard shipping"}}
       </p>
+        <hr class="mt-1 border-[4px] border-[rgb(245,245,245]" />
     </div>
-    <hr class="mt-1 border-[4px] border-[rgb(245,245,245]" />
+  
 
-    <div v-if="useStore.cartItem.length === 0" class="w-full flex-col gap-5 h-screen ">
+    <div v-if="useStore.cartItem.length === 0" class="w-full flex-col gap-5 h-screen">
       <h3 class="capitalize mt-5 text-center font-[600] tracking-wide">Your cart is empty</h3>
       <div class="flex flex-col gap-5 w-full mt-5">
         <RouterLink :to="item.path" @click="useStore.cartToggle = false" v-for="(item, index) in EmptyCartNav" :key="index"
@@ -20,30 +21,31 @@
       </div>
 
     </div>
-    <div v-else class="py-3 w-full flex flex-col gap-5 h-full justify-end">
-      <div class=" flex-col h-full flex flex-0">
-        <div class="overflow-y-scroll h-[82vh]">
+    <div v-else class="py-3 w-full flex flex-col">
+      <div class=" flex-col  flex flex-1">
+        <div class="overflow-y-scroll h-[72vh] md:h-[82vh]">
           <CartItem />
         </div>
       </div>
-    </div>
-    <div  class="h-full flex-1 w-full  flex items-end">
-      <div class="flex flex-col  w-full">
-        <div class="w-full py-1 flex">
-          <p class=" font-[600] text-[16px] flex-1">Subtal</p>
-          <p class="flex-0">${{ totalCartPrice() }}</p>
+       <div  class=" w-full  flex items-end">
+        <div class="flex flex-col  w-full">
+          <div class="w-full py-1 flex">
+            <p class=" font-[600] text-[16px] flex-1">Subtal</p>
+            <p class="flex-0">${{ totalCartPrice() }}</p>
+          </div>
+          <div class="w-full py-1 flex">
+            <p class=" font-[600] text-[16px] flex-1">Shipping</p>
+            <p class="flex-0 uppercase tracking-wider">Free</p>
+          </div>
+          <div class="w-full bg-black py-3 rounded-sm mt-2">
+            <button class="w-full uppercase text-white font-[600] text-[14px] tracking-wider"
+              @click="router.push('/checkout')">proceed to checkout</button>
+          </div>
         </div>
-        <div class="w-full py-1 flex">
-          <p class=" font-[600] text-[16px] flex-1">Shipping</p>
-          <p class="flex-0 uppercase tracking-wider">Free</p>
-        </div>
-        <div class="w-full bg-black py-3 rounded-sm mt-2">
-          <button class="w-full uppercase text-white font-[600] text-[14px] tracking-wider"
-            @click="router.push('/checkout')">proceed to checkout</button>
-        </div>
-      </div>
 
+      </div>
     </div>
+   
   </div>
 </template>
 

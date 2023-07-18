@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap flex-col relative w-full relative  pb-5">
+  <div class="flex flex-wrap flex-col relative w-full overflow-hidden">
     <Navbar />
     <div v-if="useStore.cartToggle" class="w-full md:w-[400px] bg-white h-full overflow-hidden absolute z-50 top-0 right-0 shadow-xl">
       <Cart />
